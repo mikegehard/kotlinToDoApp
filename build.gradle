@@ -33,10 +33,12 @@ repositories {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile("org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}")
+    testCompile 'junit:junit:4.12'
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile("org.jetbrains.kotlin:kotlin-test:$kotlinVersion")
     testCompile("io.damo.kspec:kspec:1.0.0")
     testCompile('org.assertj:assertj-core:3.3.0')
+    testCompile(fileTree(dir: 'testLibs', include: '*.jar'))
 }
 
 task wrapper(type: Wrapper) {
